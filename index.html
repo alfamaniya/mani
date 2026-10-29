@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="مدارینو؛ مجموعه ماشین‌حساب‌های کاربردی الکترونیک برای محاسبات قانون اهم، مقاومت LED، تقسیم ولتاژ، RC و باتری.">
+<meta name="description" content="مدارینو؛ ماشین‌حساب‌های الکترونیک و مجموعه فرمول‌های ریاضی دوم دبیرستان در باکس‌های آموزشی.">
 <meta name="theme-color" content="#10233f">
-<title>مدارینو | ماشین‌حساب‌های الکترونیک</title>
+<title>مدارینو | ابزارهای الکترونیک و فرمول‌های ریاضی</title>
 <style>
 :root{color-scheme:light;--navy:#10233f;--blue:#1769aa;--cyan:#20b9c7;--ink:#1c2b3b;--muted:#687b8f;--bg:#f3f6fa;--surface:#fff;--line:#e1e9f1;--green:#16795e;--green-bg:#eaf8f2;--amber:#855400;--amber-bg:#fff7e6;--red:#a83325;--red-bg:#fff0ed;--shadow:0 12px 32px rgba(16,35,63,.055)}
 *{box-sizing:border-box}
@@ -69,6 +69,43 @@ main{padding:26px 0 32px}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{width:min(100% - 30px,850px)}}
 @media(max-width:620px){.wrap{width:calc(100% - 22px)}.topbar{padding:16px 0 20px}.brand-mark{width:42px;height:42px;border-radius:13px;font-size:24px}.brand-name{font-size:20px}.brand-caption{font-size:10px}.header-chip{font-size:10px;padding:7px 9px}.hero-text{padding-top:20px}.hero-text h1{font-size:23px}.hero-text p{font-size:12px}main{padding-top:20px}.section-head{align-items:flex-start}.section-head h2{font-size:17px}.count-pill{font-size:10px}.grid{grid-template-columns:1fr;gap:13px}.card{padding:17px;border-radius:16px}.fields{gap:11px 10px}.card-title{font-size:15px}.disclaimer{display:block}.disclaimer strong{display:block;margin-bottom:3px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.header-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}
+.header-tab{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #ffffff38;border-radius:12px;padding:11px 16px;background:#ffffff0b;color:#e5f4ff;font-size:12px;font-weight:bold;transition:background .18s,border-color .18s}
+.header-tab:hover{background:#ffffff18}
+.header-tab[aria-selected="true"]{background:#fff;color:var(--navy);border-color:#fff;box-shadow:0 5px 18px #001a3b22}
+.header-tab .tab-icon{font-size:17px;line-height:1}
+[role="tabpanel"]:focus{outline:none}
+.math-toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:13px;align-items:center;margin-bottom:17px}
+.math-search-wrap{position:relative}
+.math-search{width:100%;height:46px;border:1px solid var(--line);border-radius:13px;padding:10px 15px;background:#fff;font:inherit;font-size:13px;color:var(--ink);outline:none;box-shadow:var(--shadow)}
+.math-search:focus{border-color:#4995cc;box-shadow:0 0 0 3px #1769aa17}
+.math-count{background:#eaf5ff;border:1px solid #d5eafa;color:#235b85;padding:8px 12px;border-radius:999px;font-size:11px;white-space:nowrap}
+.math-filters{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 12px;margin-bottom:5px;scrollbar-width:thin}
+.math-filter{flex:0 0 auto;border:1px solid #dce5ee;background:#fff;color:#5c7084;border-radius:999px;padding:8px 13px;font-size:11px;white-space:nowrap}
+.math-filter:hover{border-color:#8ab6d9;color:var(--blue)}
+.math-filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chapter-block{margin:21px 0 27px;scroll-margin-top:15px}
+.chapter-heading{display:flex;align-items:center;gap:11px;margin:0 0 13px}
+.chapter-number{flex:0 0 36px;width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(140deg,#dcf7f5,#e5efff);color:#174d74;font-size:15px;font-weight:bold}
+.chapter-heading h3{font-size:16px;margin:0 0 2px}
+.chapter-heading p{font-size:11px;color:var(--muted);margin:0}
+.formula-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}
+.math-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(16,35,63,.035);display:flex;flex-direction:column;gap:9px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.math-card:hover{transform:translateY(-2px);border-color:#c1d9eb;box-shadow:0 14px 30px rgba(16,35,63,.07)}
+.math-card-top{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.math-card-label{font-size:10px;color:#59748b;font-weight:bold}
+.math-card-symbol{width:32px;height:32px;flex:0 0 32px;border-radius:10px;display:grid;place-items:center;background:#eff6fc;color:#1769aa;font-size:13px;font-weight:bold;direction:ltr}
+.math-card h4{font-size:13px;line-height:1.7;margin:0;color:#22374b}
+.math-equation{display:flex;align-items:center;justify-content:center;min-height:58px;padding:13px 9px;background:linear-gradient(120deg,#f0f7fc,#f5f6ff);border:1px solid #e7eef7;border-radius:11px;color:#123e62;font-family:Cambria,"Times New Roman",serif;font-size:17px;font-weight:bold;line-height:1.8;text-align:center;overflow-wrap:anywhere;word-break:normal}
+.math-equation.multiline{font-size:15px;line-height:1.9}
+.math-card p{font-size:11px;line-height:2;color:#65788b;margin:0}
+.math-condition{display:inline-flex;align-self:flex-start;padding:4px 8px;border-radius:7px;background:#eef8f4;color:#32705c;font-size:10px;line-height:1.6}
+.math-empty{display:none;text-align:center;background:#fff;border:1px dashed #cbd8e4;border-radius:15px;padding:35px 15px;color:var(--muted);font-size:13px}
+.math-footnote{margin-top:18px;border:1px solid #f0dfb8;background:#fffaf0;color:#705b2e;border-radius:13px;padding:14px 16px;font-size:11px;line-height:2}
+.math-footnote strong{color:#654500}
+@media(max-width:1000px){.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.header-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:15px}.header-tab{padding:10px 7px;font-size:10px;line-height:1.6}.header-tab .tab-icon{font-size:15px}.math-toolbar{grid-template-columns:1fr;gap:8px}.math-count{justify-self:start}.math-filters{margin-left:-1px;margin-right:-1px}.chapter-block{margin:17px 0 22px}.chapter-heading h3{font-size:14px}.formula-grid{grid-template-columns:1fr;gap:10px}.math-card{padding:15px}.math-equation{min-height:51px;font-size:16px}.math-equation.multiline{font-size:14px}}
 </style>
 </head>
 <body>
@@ -78,13 +115,19 @@ main{padding:26px 0 32px}
       <div class="brand"><div class="brand-mark" aria-hidden="true">ϟ</div><div><div class="brand-name">مدارینو</div><div class="brand-caption">جعبه‌ابزار محاسبات الکترونیک</div></div></div>
       <div class="header-chip"><i aria-hidden="true"></i> محاسبه در همین صفحه</div>
     </div>
+
+    <nav class="header-tabs" role="tablist" aria-label="بخش‌های مدارینو">
+      <button class="header-tab" id="tabCalculators" type="button" role="tab" aria-selected="true" aria-controls="calculatorsPanel"><span class="tab-icon" aria-hidden="true">⌁</span> ماشین‌حساب‌های الکترونیک</button>
+      <button class="header-tab" id="tabMath" type="button" role="tab" aria-selected="false" aria-controls="mathPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">∑</span> فرمول‌های ریاضی دوم دبیرستان</button>
+    </nav>
     <div class="hero-text">
-      <h1>ماشین‌حساب‌های الکترونیک</h1>
-      <p>ابزارهای پرکاربرد برای محاسبه مدارهای DC، انتخاب مقاومت، تقسیم ولتاژ، مدار RC و تخمین زمان کار باتری؛ ساده، سریع و مناسب موبایل.</p>
+      <h1 id="pageHeading">جعبه‌ابزار محاسبات الکترونیک</h1>
+      <p id="pageDescription">ماشین‌حساب‌های کاربردی مدار و مجموعه‌ای از فرمول‌های ریاضی برای مرور سریع و یادگیری، در یک صفحه ساده و منظم.</p>
     </div>
   </div>
 </header>
 <main class="wrap">
+<section id="calculatorsPanel" role="tabpanel" aria-labelledby="tabCalculators" tabindex="0">
   <div class="section-head"><div><h2>ابزارهای محاسباتی</h2><p>مقادیر را وارد کن و دکمه محاسبه را بزن.</p></div><span class="count-pill">۷ ماشین‌حساب</span></div>
   <section class="grid" aria-label="ماشین‌حساب‌های الکترونیک">
     <article class="card" id="ohmCard">
@@ -181,6 +224,178 @@ main{padding:26px 0 32px}
     </article>
   </section>
   <section class="disclaimer" aria-label="نکته ایمنی"><strong>نکته ایمنی</strong><span>این ابزارها محاسبات آموزشی و ایده‌آل انجام می‌دهند. پیش از ساخت مدار، توان نامی مقاومت، تلرانس، مشخصات دیتاشیت و محدوده کاری قطعات را بررسی کن. برای موتور DC، مقاومت سری معمولاً روش مناسبی برای راه‌اندازی یا حفاظت نیست؛ درایور مناسب موتور انتخاب مطمئن‌تری است.</span></section>
+
+</section>
+<section id="mathPanel" role="tabpanel" aria-labelledby="tabMath" tabindex="0" hidden>
+  <div class="section-head"><div><h2>فرمول‌های کلیدی ریاضی ۲</h2><p>بر اساس سرفصل‌های کتاب ریاضی دوم دبیرستانِ نظام قدیم؛ فرمول‌ها به‌صورت خلاصه و دسته‌بندی‌شده.</p></div><span class="count-pill">۷ فصل آموزشی</span></div>
+  <div class="math-toolbar">
+    <div class="math-search-wrap"><input class="math-search" id="mathSearch" type="search" placeholder="جستجوی فرمول، موضوع یا نماد..." aria-label="جستجوی فرمول‌های ریاضی"></div>
+    <span class="math-count" id="mathCount" aria-live="polite">۲۸ فرمول</span>
+  </div>
+  <div class="math-filters" role="group" aria-label="فیلتر فصل‌ها">
+    <button class="math-filter active" type="button" data-math-filter="all">همه فصل‌ها</button>
+    <button class="math-filter" type="button" data-math-filter="sequences">۱. الگو و دنباله</button>
+    <button class="math-filter" type="button" data-math-filter="functions">۲. تابع</button>
+    <button class="math-filter" type="button" data-math-filter="special">۳. توابع خاص</button>
+    <button class="math-filter" type="button" data-math-filter="logs">۴. نمایی و لگاریتم</button>
+    <button class="math-filter" type="button" data-math-filter="trig">۵. مثلثات</button>
+    <button class="math-filter" type="button" data-math-filter="matrices">۶. ماتریس</button>
+    <button class="math-filter" type="button" data-math-filter="counting">۷. ترکیبات</button>
+  </div>
+
+  <section class="chapter-block" data-chapter-block="sequences">
+    <div class="chapter-heading"><span class="chapter-number">۱</span><div><h3>الگو و دنباله</h3><p>دنباله حسابی، هندسی و مجموع جمله‌ها</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="sequences" data-keywords="دنباله حسابی جمله عمومی اختلاف قدر نسبت تفاضل">
+        <div class="math-card-top"><span class="math-card-label">دنباله حسابی</span><span class="math-card-symbol">aₙ</span></div><h4>جمله nام دنباله حسابی</h4><div class="math-equation" dir="ltr">aₙ = a₁ + (n − 1)d</div><p>در آن d اختلاف ثابت دو جمله پیاپی است؛ هر جمله با افزودن d به جمله قبل به دست می‌آید.</p><span class="math-condition">n = 1, 2, 3, …</span>
+      </article>
+      <article class="math-card" data-chapter="sequences" data-keywords="مجموع دنباله حسابی جمع جمله ها">
+        <div class="math-card-top"><span class="math-card-label">دنباله حسابی</span><span class="math-card-symbol">Σ</span></div><h4>مجموع n جمله اول</h4><div class="math-equation" dir="ltr">Sₙ = n(a₁ + aₙ) / 2</div><p>اگر جمله آخر را نداشته باشیم، می‌توان نوشت: Sₙ = n[2a₁ + (n−1)d]/2.</p>
+      </article>
+      <article class="math-card" data-chapter="sequences" data-keywords="دنباله هندسی نسبت جمله عمومی توان">
+        <div class="math-card-top"><span class="math-card-label">دنباله هندسی</span><span class="math-card-symbol">r</span></div><h4>جمله nام دنباله هندسی</h4><div class="math-equation" dir="ltr">aₙ = a₁ × rⁿ⁻¹</div><p>نسبت ثابت r از تقسیم هر جمله بر جمله قبل (با فرض ناصفر بودن مخرج) به دست می‌آید.</p>
+      </article>
+      <article class="math-card" data-chapter="sequences" data-keywords="مجموع دنباله هندسی مجموع جملات r">
+        <div class="math-card-top"><span class="math-card-label">دنباله هندسی</span><span class="math-card-symbol">Sₙ</span></div><h4>مجموع n جمله اول</h4><div class="math-equation" dir="ltr">Sₙ = a₁(rⁿ − 1)/(r − 1)</div><p>فرمول معادل با صورت a₁(1−rⁿ)/(1−r) نیز درست است.</p><span class="math-condition">برای r ≠ 1</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="functions">
+    <div class="chapter-heading"><span class="chapter-number">۲</span><div><h3>تابع</h3><p>اعمال جبری، ترکیب تابع و تابع وارون</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="functions" data-keywords="اعمال جبری تابع جمع تفریق ضرب تقسیم دامنه">
+        <div class="math-card-top"><span class="math-card-label">اعمال روی توابع</span><span class="math-card-symbol">f ± g</span></div><h4>جمع، تفریق و ضرب توابع</h4><div class="math-equation multiline" dir="ltr">(f ± g)(x) = f(x) ± g(x)<br>(fg)(x) = f(x)g(x)</div><p>دامنه هر عمل، اشتراک دامنه‌های دو تابع است.</p>
+      </article>
+      <article class="math-card" data-chapter="functions" data-keywords="تقسیم توابع کسر تابع دامنه مخرج صفر">
+        <div class="math-card-top"><span class="math-card-label">اعمال روی توابع</span><span class="math-card-symbol">f/g</span></div><h4>تقسیم دو تابع</h4><div class="math-equation" dir="ltr">(f/g)(x) = f(x) / g(x)</div><p>علاوه بر اشتراک دامنه‌ها، باید g(x) ≠ 0 باشد.</p><span class="math-condition">مخرج نباید صفر شود</span>
+      </article>
+      <article class="math-card" data-chapter="functions" data-keywords="ترکیب تابع f پس از g">
+        <div class="math-card-top"><span class="math-card-label">ترکیب توابع</span><span class="math-card-symbol">f∘g</span></div><h4>ترکیب دو تابع</h4><div class="math-equation" dir="ltr">(f ∘ g)(x) = f(g(x))</div><p>ابتدا g را محاسبه می‌کنیم و سپس نتیجه را در f قرار می‌دهیم.</p>
+      </article>
+      <article class="math-card" data-chapter="functions" data-keywords="تابع وارون معکوس یک به یک inverse">
+        <div class="math-card-top"><span class="math-card-label">تابع وارون</span><span class="math-card-symbol">f⁻¹</span></div><h4>رابطه تابع و وارون</h4><div class="math-equation multiline" dir="ltr">f⁻¹(f(x)) = x<br>f(f⁻¹(x)) = x</div><p>تابع باید روی دامنه موردنظر یک‌به‌یک باشد؛ دامنه و برد تابع و وارون جابه‌جا می‌شوند.</p>
+      </article>
+      <article class="math-card" data-chapter="functions" data-keywords="وارون تابع خطی ax+b تابع درجه اول">
+        <div class="math-card-top"><span class="math-card-label">تابع خطی</span><span class="math-card-symbol">f(x)</span></div><h4>وارون تابع خطی</h4><div class="math-equation" dir="ltr">f(x)=ax+b ⇒ f⁻¹(x)=(x−b)/a</div><p>برای به‌دست‌آوردن وارون، x و y را جابه‌جا و معادله را نسبت به y حل می‌کنیم.</p><span class="math-condition">a ≠ 0</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="special">
+    <div class="chapter-heading"><span class="chapter-number">۳</span><div><h3>توابع خاص</h3><p>قدر مطلق، علامت عدد و جزء صحیح</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="special" data-keywords="قدر مطلق تابع قدرمطلق فاصله از صفر">
+        <div class="math-card-top"><span class="math-card-label">تابع قدر مطلق</span><span class="math-card-symbol">|x|</span></div><h4>تعریف قدر مطلق</h4><div class="math-equation multiline" dir="ltr">|x| = x &nbsp; if x ≥ 0<br>|x| = −x &nbsp; if x &lt; 0</div><p>قدر مطلق، فاصله عدد از صفر است و هیچ‌گاه منفی نمی‌شود.</p>
+      </article>
+      <article class="math-card" data-chapter="special" data-keywords="تابع علامت سیگنوم sign sgn">
+        <div class="math-card-top"><span class="math-card-label">تابع علامت</span><span class="math-card-symbol">sgn</span></div><h4>علامت عدد حقیقی</h4><div class="math-equation multiline" dir="ltr">sgn(x) = 1, x &gt; 0<br>sgn(x) = 0, x = 0<br>sgn(x) = −1, x &lt; 0</div><p>خروجی تابع مشخص می‌کند عدد ورودی مثبت، صفر یا منفی است.</p>
+      </article>
+      <article class="math-card" data-chapter="special" data-keywords="جزء صحیح کف عدد صحیح بزرگتر کوچکترین عدد">
+        <div class="math-card-top"><span class="math-card-label">تابع جزء صحیح</span><span class="math-card-symbol">⌊x⌋</span></div><h4>جزء صحیح عدد</h4><div class="math-equation" dir="ltr">⌊x⌋ = n  ⇔  n ≤ x &lt; n+1</div><p>⌊x⌋ بزرگ‌ترین عدد صحیح کوچک‌تر یا مساوی x است. برای نمونه، ⌊2.7⌋=2 و ⌊−1.2⌋=−2.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="logs">
+    <div class="chapter-heading"><span class="chapter-number">۴</span><div><h3>توابع نمایی و لگاریتمی</h3><p>قوانین توان، تعریف لگاریتم و تغییر مبنا</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="logs" data-keywords="قوانین توان ضرب تقسیم توان صفر منفی">
+        <div class="math-card-top"><span class="math-card-label">قوانین توان</span><span class="math-card-symbol">aˣ</span></div><h4>ضرب، تقسیم و توانِ توان</h4><div class="math-equation multiline" dir="ltr">aᵐaⁿ = aᵐ⁺ⁿ<br>aᵐ/aⁿ = aᵐ⁻ⁿ<br>(aᵐ)ⁿ = aᵐⁿ</div><p>در رابطه تقسیم، a≠0 لازم است.</p>
+      </article>
+      <article class="math-card" data-chapter="logs" data-keywords="توان منفی توان صفر توان کسری ریشه">
+        <div class="math-card-top"><span class="math-card-label">قوانین توان</span><span class="math-card-symbol">√</span></div><h4>توان صفر، منفی و کسری</h4><div class="math-equation multiline" dir="ltr">a⁰ = 1 &nbsp; (a ≠ 0)<br>a⁻ⁿ = 1/aⁿ<br>aᵐ⁄ⁿ = ⁿ√(aᵐ)</div><p>در اعداد حقیقی، توان‌های کسری با ریشه زوج به محدودیت دامنه نیاز دارند.</p>
+      </article>
+      <article class="math-card" data-chapter="logs" data-keywords="تعریف لگاریتم تبدیل نمایی log base">
+        <div class="math-card-top"><span class="math-card-label">تعریف لگاریتم</span><span class="math-card-symbol">log</span></div><h4>تبدیل شکل نمایی و لگاریتمی</h4><div class="math-equation" dir="ltr">logₐ(x) = y ⇔ aʸ = x</div><p>مبنای لگاریتم مثبت و مخالف یک است؛ آرگومان لگاریتم باید مثبت باشد.</p><span class="math-condition">a &gt; 0 ، a ≠ 1 ، x &gt; 0</span>
+      </article>
+      <article class="math-card" data-chapter="logs" data-keywords="لگاریتم ضرب حاصلضرب جمع لگاریتم">
+        <div class="math-card-top"><span class="math-card-label">قوانین لگاریتم</span><span class="math-card-symbol">×</span></div><h4>لگاریتم حاصل‌ضرب</h4><div class="math-equation" dir="ltr">logₐ(xy) = logₐx + logₐy</div><p>این رابطه برای x و y مثبت و با یک مبنای یکسان برقرار است.</p>
+      </article>
+      <article class="math-card" data-chapter="logs" data-keywords="لگاریتم خارج قسمت تفریق log">
+        <div class="math-card-top"><span class="math-card-label">قوانین لگاریتم</span><span class="math-card-symbol">÷</span></div><h4>لگاریتم خارج‌قسمت</h4><div class="math-equation" dir="ltr">logₐ(x/y) = logₐx − logₐy</div><p>آرگومان‌های x و y باید مثبت باشند و y صفر نباشد.</p>
+      </article>
+      <article class="math-card" data-chapter="logs" data-keywords="توان در لگاریتم تغییر مبنا">
+        <div class="math-card-top"><span class="math-card-label">قوانین لگاریتم</span><span class="math-card-symbol">n</span></div><h4>توان در لگاریتم و تغییر مبنا</h4><div class="math-equation multiline" dir="ltr">logₐ(xⁿ) = n logₐx<br>logₐx = logᵦx / logᵦa</div><p>برای تغییر مبنا، a و b باید مثبت و مخالف یک باشند و x مثبت باشد.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="trig">
+    <div class="chapter-heading"><span class="chapter-number">۵</span><div><h3>مثلثات</h3><p>نسبت‌ها، روابط بنیادی و قوانین مثلث</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="trig" data-keywords="درجه رادیان تبدیل زاویه pi">
+        <div class="math-card-top"><span class="math-card-label">اندازه زاویه</span><span class="math-card-symbol">π</span></div><h4>تبدیل درجه و رادیان</h4><div class="math-equation multiline" dir="ltr">180° = π rad<br>θ(rad) = θ(°) × π/180</div><p>برای تبدیل رادیان به درجه، مقدار زاویه را در 180/π ضرب کن.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="نسبت های مثلثاتی سینوس کسینوس تانژانت مثلث قائم">
+        <div class="math-card-top"><span class="math-card-label">نسبت‌های مثلثاتی</span><span class="math-card-symbol">sin</span></div><h4>تعریف در مثلث قائم‌الزاویه</h4><div class="math-equation multiline" dir="ltr">sin θ = مقابل / وتر<br>cos θ = مجاور / وتر<br>tan θ = مقابل / مجاور</div><p>زاویه θ یکی از دو زاویه تند مثلث قائم‌الزاویه است.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="همانی مثلثاتی سینوس مربع کسینوس مربع تانژانت">
+        <div class="math-card-top"><span class="math-card-label">همانی‌های بنیادی</span><span class="math-card-symbol">1</span></div><h4>رابطه اصلی مثلثاتی</h4><div class="math-equation multiline" dir="ltr">sin²θ + cos²θ = 1<br>tan θ = sin θ / cos θ</div><p>رابطه تانژانت وقتی تعریف می‌شود که cos θ ≠ 0 باشد.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="زاویه متمم سینوس کسینوس تانژانت">
+        <div class="math-card-top"><span class="math-card-label">زاویه‌های متمم</span><span class="math-card-symbol">90°</span></div><h4>روابط زاویه مکملِ ۹۰ درجه</h4><div class="math-equation multiline" dir="ltr">sin(90°−θ) = cos θ<br>cos(90°−θ) = sin θ</div><p>همچنین tan(90°−θ)=1/tan θ، به شرط تعریف دو طرف.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="جمع دو زاویه سینوس کسینوس فرمول جمع تفاضل">
+        <div class="math-card-top"><span class="math-card-label">جمع و تفاضل زاویه</span><span class="math-card-symbol">±</span></div><h4>فرمول جمع و تفاضل سینوس و کسینوس</h4><div class="math-equation multiline" dir="ltr">sin(A±B)=sin A cos B ± cos A sin B<br>cos(A±B)=cos A cos B ∓ sin A sin B</div><p>در فرمول کسینوس، علامت جمله دوم برعکس علامتِ داخل پرانتز است.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="قانون سینوس ها ضلع زاویه مثلث">
+        <div class="math-card-top"><span class="math-card-label">قانون سینوس‌ها</span><span class="math-card-symbol">a,b,c</span></div><h4>رابطه ضلع‌ها و زاویه‌های مثلث</h4><div class="math-equation" dir="ltr">a/sin A = b/sin B = c/sin C</div><p>هر ضلع در برابر زاویه هم‌نام خود قرار دارد؛ برای مثلث غیرمنحط.</p>
+      </article>
+      <article class="math-card" data-chapter="trig" data-keywords="قانون کسینوس ها ضلع مثلث">
+        <div class="math-card-top"><span class="math-card-label">قانون کسینوس‌ها</span><span class="math-card-symbol">c²</span></div><h4>محاسبه ضلع از دو ضلع و زاویه</h4><div class="math-equation multiline" dir="ltr">c² = a² + b² − 2ab cos C</div><p>با تغییر نام ضلع‌ها، رابطه مشابه برای هر ضلع دیگر به‌دست می‌آید.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="matrices">
+    <div class="chapter-heading"><span class="chapter-number">۶</span><div><h3>ماتریس</h3><p>اعمال روی ماتریس‌ها، دترمینان و وارون ماتریس ۲×۲</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="matrices" data-keywords="جمع ماتریس تفریق ماتریس هم اندازه">
+        <div class="math-card-top"><span class="math-card-label">جمع و تفریق</span><span class="math-card-symbol">A±B</span></div><h4>جمع و تفریق درایه‌ها</h4><div class="math-equation" dir="ltr">(A ± B)ᵢⱼ = Aᵢⱼ ± Bᵢⱼ</div><p>فقط ماتریس‌های هم‌اندازه را می‌توان با هم جمع یا تفریق کرد.</p>
+      </article>
+      <article class="math-card" data-chapter="matrices" data-keywords="ضرب ماتریس دو در دو">
+        <div class="math-card-top"><span class="math-card-label">ضرب ماتریس</span><span class="math-card-symbol">AB</span></div><h4>ضرب دو ماتریس ۲×۲</h4><div class="math-equation multiline" dir="ltr">[a b; c d][e f; g h]<br>=[ae+bg, af+bh; ce+dg, cf+dh]</div><p>تعداد ستون‌های ماتریس اول باید با تعداد سطرهای ماتریس دوم برابر باشد.</p>
+      </article>
+      <article class="math-card" data-chapter="matrices" data-keywords="دترمینان ماتریس دو در دو det">
+        <div class="math-card-top"><span class="math-card-label">دترمینان</span><span class="math-card-symbol">det</span></div><h4>دترمینان ماتریس ۲×۲</h4><div class="math-equation" dir="ltr">det(A) = ad − bc</div><p>برای A = [a b; c d]، حاصل‌ضرب قطر اصلی منهای حاصل‌ضرب قطر فرعی.</p>
+      </article>
+      <article class="math-card" data-chapter="matrices" data-keywords="ماتریس وارون inverse determinant">
+        <div class="math-card-top"><span class="math-card-label">ماتریس وارون</span><span class="math-card-symbol">A⁻¹</span></div><h4>وارون ماتریس ۲×۲</h4><div class="math-equation multiline" dir="ltr">A⁻¹ = 1/(ad−bc) ×<br>[d −b; −c a]</div><p>دترمینان باید ناصفر باشد؛ در غیر این صورت ماتریس وارون ندارد.</p><span class="math-condition">ad − bc ≠ 0</span>
+      </article>
+      <article class="math-card" data-chapter="matrices" data-keywords="معادلات خطی کرامر دترمینان دستگاه دو معادله">
+        <div class="math-card-top"><span class="math-card-label">دستگاه دو معادله</span><span class="math-card-symbol">Δ</span></div><h4>قاعده کرامر برای دو مجهول</h4><div class="math-equation multiline" dir="ltr">ax+by=e<br>cx+dy=f<br>x=(ed−bf)/Δ, y=(af−ec)/Δ</div><p>در اینجا Δ=ad−bc است و برای استفاده از قاعده باید Δ≠0 باشد.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter-block" data-chapter-block="counting">
+    <div class="chapter-heading"><span class="chapter-number">۷</span><div><h3>ترکیبات و شمارش</h3><p>فاکتوریل، اصل شمارش، جایگشت و ترکیب</p></div></div>
+    <div class="formula-grid">
+      <article class="math-card" data-chapter="counting" data-keywords="فاکتوریل n factorial">
+        <div class="math-card-top"><span class="math-card-label">فاکتوریل</span><span class="math-card-symbol">n!</span></div><h4>حاصل‌ضرب اعداد طبیعی تا n</h4><div class="math-equation" dir="ltr">n! = n(n−1)…2×1</div><p>برای n عدد صحیح نامنفی، 0! = 1 تعریف می‌شود.</p>
+      </article>
+      <article class="math-card" data-chapter="counting" data-keywords="اصل ضرب شمارش انتخاب مرحله اول مرحله دوم">
+        <div class="math-card-top"><span class="math-card-label">اصل ضرب</span><span class="math-card-symbol">×</span></div><h4>شمارش چند مرحله مستقل</h4><div class="math-equation" dir="ltr">N = n₁ × n₂ × … × nₖ</div><p>اگر یک کار k مرحله داشته باشد و مرحله i، تعداد nᵢ انتخاب داشته باشد، تعداد حالت‌ها از ضرب این تعدادها به‌دست می‌آید.</p>
+      </article>
+      <article class="math-card" data-chapter="counting" data-keywords="جایگشت ترتیب مهم nPr">
+        <div class="math-card-top"><span class="math-card-label">جایگشت</span><span class="math-card-symbol">P(n,r)</span></div><h4>انتخاب r مورد با درنظرگرفتن ترتیب</h4><div class="math-equation" dir="ltr">P(n,r) = n! / (n−r)!</div><p>ترتیب انتخاب مهم است و اشیا تکراری در این مدل فرض نمی‌شوند.</p><span class="math-condition">0 ≤ r ≤ n</span>
+      </article>
+      <article class="math-card" data-chapter="counting" data-keywords="ترکیب انتخاب بدون ترتیب nCr">
+        <div class="math-card-top"><span class="math-card-label">ترکیب</span><span class="math-card-symbol">C(n,r)</span></div><h4>انتخاب r مورد بدون توجه به ترتیب</h4><div class="math-equation" dir="ltr">C(n,r) = n! / [r!(n−r)!]</div><p>اگر فقط مجموعه انتخاب‌شده مهم باشد و ترتیب اهمیتی نداشته باشد، از ترکیب استفاده می‌کنیم.</p><span class="math-condition">0 ≤ r ≤ n</span>
+      </article>
+      <article class="math-card" data-chapter="counting" data-keywords="رابطه جایگشت ترکیب">
+        <div class="math-card-top"><span class="math-card-label">رابطه ترکیب و جایگشت</span><span class="math-card-symbol">P/C</span></div><h4>ارتباط دو روش شمارش</h4><div class="math-equation" dir="ltr">P(n,r) = C(n,r) × r!</div><p>تعداد جایگشت‌ها برابر تعداد ترکیب‌ها ضرب‌در تعداد ترتیب‌های ممکن برای هر انتخاب است.</p>
+      </article>
+      <article class="math-card" data-chapter="counting" data-keywords="دوجمله ای بسط نیوتن ضرایب ترکیب">
+        <div class="math-card-top"><span class="math-card-label">بسط دوجمله‌ای</span><span class="math-card-symbol">(a+b)ⁿ</span></div><h4>فرمول بسط توان دوجمله‌ای</h4><div class="math-equation multiline" dir="ltr">(a+b)ⁿ = Σ C(n,r) aⁿ⁻ʳ bʳ</div><p>مجموع برای r از صفر تا n گرفته می‌شود؛ ضرایب همان ضرایب ترکیب هستند.</p>
+      </article>
+    </div>
+  </section>
+  <div class="math-empty" id="mathEmpty">فرمولی با این عبارت پیدا نشد. عبارت جستجو را تغییر بده یا «همه فصل‌ها» را انتخاب کن.</div>
+  <div class="math-footnote"><strong>یادآوری درسی:</strong> این بخش یک برگه‌ی خلاصه و آموزشی از روابط پرکاربرد سرفصل‌های ریاضی ۲ نظام قدیم است، نه بازنشر کامل متن کتاب. برای پاسخ نهایی به سؤال‌های درسی، فرض‌ها، دامنه و شرایط هر فرمول را بررسی کن.</div>
+</section>
+
 </main>
 <footer class="wrap footer">مدارینو · ماشین‌حساب‌های مستقل در مرورگر · بدون نیاز به کتابخانه خارجی</footer>
 <script>
@@ -290,6 +505,45 @@ $('energyCalc').addEventListener('click',()=>{
  }catch(e){error('energyResult','ورودی نیاز به بررسی دارد',e.message)}
 });
 bindClear('energyClear',['energyV','energyI','energyHours'],'energyResult');
+
+const tabCalculators=$('tabCalculators'),tabMath=$('tabMath'),calculatorsPanel=$('calculatorsPanel'),mathPanel=$('mathPanel');
+const pageHeading=$('pageHeading'),pageDescription=$('pageDescription');
+function activateTab(which){
+ const showMath=which==='math';
+ tabCalculators.setAttribute('aria-selected',String(!showMath));tabCalculators.tabIndex=showMath?-1:0;
+ tabMath.setAttribute('aria-selected',String(showMath));tabMath.tabIndex=showMath?0:-1;
+ calculatorsPanel.hidden=showMath;mathPanel.hidden=!showMath;
+ pageHeading.textContent=showMath?'فرمول‌های ریاضی دوم دبیرستان':'جعبه‌ابزار محاسبات الکترونیک';
+ pageDescription.textContent=showMath?'فرمول‌های مهم هفت فصل را در باکس‌های آموزشی مرور کن؛ برای پیدا کردن سریع هر رابطه، جستجو یا فیلتر فصل را به‌کار ببر.':'ماشین‌حساب‌های کاربردی مدار و مجموعه‌ای از فرمول‌های ریاضی برای مرور سریع و یادگیری، در یک صفحه ساده و منظم.';
+}
+tabCalculators.addEventListener('click',()=>activateTab('calculators'));
+tabMath.addEventListener('click',()=>activateTab('math'));
+[tabCalculators,tabMath].forEach((tab,index)=>tab.addEventListener('keydown',e=>{
+ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();const next=index===0?tabMath:tabCalculators;next.focus();next.click()}
+}));
+const mathSearch=$('mathSearch'),mathCards=[...document.querySelectorAll('.math-card')],chapterBlocks=[...document.querySelectorAll('.chapter-block')],mathFilters=[...document.querySelectorAll('[data-math-filter]')],mathCount=$('mathCount'),mathEmpty=$('mathEmpty');
+let selectedMathChapter='all';
+function filterMathCards(){
+ const query=(mathSearch.value||'').trim().toLocaleLowerCase('fa');
+ let visible=0;
+ mathCards.forEach(card=>{
+  const chapterMatch=selectedMathChapter==='all'||card.dataset.chapter===selectedMathChapter;
+  const contentText=(card.innerText+' '+(card.dataset.keywords||'')).toLocaleLowerCase('fa');
+  const searchMatch=!query||contentText.includes(query);
+  const show=chapterMatch&&searchMatch;
+  card.hidden=!show;if(show)visible++;
+ });
+ chapterBlocks.forEach(block=>{block.hidden=!block.querySelector('.math-card:not([hidden])')});
+ mathCount.textContent=visible+' فرمول';
+ mathEmpty.style.display=visible?'none':'block';
+}
+mathSearch.addEventListener('input',filterMathCards);
+mathFilters.forEach(button=>button.addEventListener('click',()=>{
+ selectedMathChapter=button.dataset.mathFilter;
+ mathFilters.forEach(b=>b.classList.toggle('active',b===button));
+ filterMathCards();
+}));
+
 </script>
 </body>
 </html>
