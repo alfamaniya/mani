@@ -274,8 +274,9 @@ $('batCalc').addEventListener('click',()=>{
   if(usable>100)throw new Error('درصد ظرفیت قابل‌استفاده باید بین 1 و 100 باشد.');
   const hours=cap*(usable/100)/current;
   if(!Number.isFinite(hours))throw new Error('نتیجه خارج از محدوده قابل محاسبه است.');
-  const mins=hours*60,days=hours/24,primary=hours>=48?fmt(days)+' روز':fmt(hours)+' ساعت';
-  result('batResult','زمان کارکرد تقریبی',[{main:true,label:primary},{label:'ظرفیت قابل‌استفاده',value:fmt(cap*usable/100)+' mAh'},{label:'زمان به ساعت و دقیقه',value:fmt(Math.floor(mins/60))+' ساعت و '+fmt(Math.round(mins%60))+' دقیقه'},{label:'درصد ظرفیت استفاده‌شده در تخمین',value:fmt(usable)+'%'}],'warning');
+  const mins=hours*60,totalMinutes=Math.round(mins),days=hours/24,primary=hours>=48?fmt(days)+' روز':fmt(hours)+' ساعت';
+  const durationText=mins<1?fmt(hours*3600)+' ثانیه':fmt(Math.floor(totalMinutes/60))+' ساعت و '+fmt(totalMinutes%60)+' دقیقه';
+  result('batResult','زمان کارکرد تقریبی',[{main:true,label:primary},{label:'ظرفیت قابل‌استفاده',value:fmt(cap*usable/100)+' mAh'},{label:'زمان به ساعت و دقیقه',value:durationText},{label:'درصد ظرفیت استفاده‌شده در تخمین',value:fmt(usable)+'%'}],'warning');
  }catch(e){error('batResult','ورودی نیاز به بررسی دارد',e.message)}
 });
 bindClear('batClear',['batCapacity','batCurrent','batUsable'],'batResult',{batUsable:'85'});
