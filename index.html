@@ -77,7 +77,7 @@ document.getElementById('clearQuadratic').addEventListener('click',()=>{bInput.v
 
 const batteryInput=document.getElementById('batteryVoltage'),loadVoltageInput=document.getElementById('loadVoltage'),currentInput=document.getElementById('loadCurrent'),resistorResult=document.getElementById('resistorResult');
 function showResistorResult(message,kind=''){resistorResult.innerHTML=message;resistorResult.className='resistor-result'+(kind?' '+kind:'');resistorResult.style.display='block'}
-function nearestStandardResistor(value){const series=[10,12,15,18,22,27,33,39,47,56,68,82];if(value<=0)return 0;const decade=Math.pow(10,Math.floor(Math.log10(value))),normalized=value/decade,chosen=series.find(n=>n>=normalized);return chosen===undefined?10*decade:chosen*decade/10}
+function nearestStandardResistor(value){const series=[1,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2];if(value<=0)return 0;const decade=Math.pow(10,Math.floor(Math.log10(value))),normalized=value/decade,chosen=series.find(n=>n>=normalized);return chosen===undefined?10*decade:chosen*decade}
 document.getElementById('calculateResistor').addEventListener('click',()=>{
  const raw=[batteryInput.value.trim(),loadVoltageInput.value.trim(),currentInput.value.trim()];
  if(raw.some(v=>v==='')){showResistorResult('<strong>ورودی ناقص است</strong>لطفاً ولتاژ باتری، ولتاژ قطعه و جریان موردنیاز را وارد کنید.','error');return}
