@@ -133,6 +133,16 @@ main{padding:26px 0 32px}
  .tab-copy small{font-size:9px}
  .tab-count{font-size:9px;padding:4px 7px}
 }
+
+/* تب مستقل برای هر درس ریاضی */
+.lesson-tabs{display:flex;gap:8px;overflow-x:auto;padding:3px 2px 13px;margin:0 0 18px;scrollbar-width:thin;scroll-snap-type:x proximity}
+.lesson-tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1px solid #dce5ee;border-radius:12px;background:#fff;color:#526a80;padding:10px 13px;font-size:11px;font-weight:bold;white-space:nowrap;scroll-snap-align:start;transition:background .18s,border-color .18s,color .18s,box-shadow .18s}
+.lesson-tab>span{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#edf3f8;color:#55728a;font-size:11px}
+.lesson-tab:hover{border-color:#8ab6d9;color:var(--blue)}
+.lesson-tab.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 5px 14px #10233f20}
+.lesson-tab.active>span{background:#ffffff20;color:#9ce8e2}
+.chapter-block[hidden]{display:none!important}
+@media(max-width:620px){.lesson-tabs{gap:7px;margin-bottom:14px}.lesson-tab{padding:9px 11px;font-size:10px;border-radius:10px}.lesson-tab>span{width:22px;height:22px}}
 </style>
 </head>
 <body>
@@ -268,18 +278,17 @@ main{padding:26px 0 32px}
     <div class="math-search-wrap"><input class="math-search" id="mathSearch" type="search" placeholder="جستجوی فرمول، موضوع یا نماد..." aria-label="جستجوی فرمول‌های ریاضی"></div>
     <span class="math-count" id="mathCount" aria-live="polite">۳۶ فرمول</span>
   </div>
-  <div class="math-filters" role="group" aria-label="فیلتر فصل‌ها">
-    <button class="math-filter active" type="button" data-math-filter="all">همه فصل‌ها</button>
-    <button class="math-filter" type="button" data-math-filter="sequences">۱. الگو و دنباله</button>
-    <button class="math-filter" type="button" data-math-filter="functions">۲. تابع</button>
-    <button class="math-filter" type="button" data-math-filter="special">۳. توابع خاص</button>
-    <button class="math-filter" type="button" data-math-filter="logs">۴. نمایی و لگاریتم</button>
-    <button class="math-filter" type="button" data-math-filter="trig">۵. مثلثات</button>
-    <button class="math-filter" type="button" data-math-filter="matrices">۶. ماتریس</button>
-    <button class="math-filter" type="button" data-math-filter="counting">۷. ترکیبات</button>
-  </div>
+  <nav class="lesson-tabs" role="tablist" aria-label="درس‌های ریاضی دوم دبیرستان">
+    <button class="lesson-tab active" id="lessonTab-sequences" type="button" role="tab" aria-selected="true" aria-controls="lesson-sequences" data-lesson-tab="sequences"><span>۱</span>الگو و دنباله</button>
+    <button class="lesson-tab" id="lessonTab-functions" type="button" role="tab" aria-selected="false" aria-controls="lesson-functions" tabindex="-1" data-lesson-tab="functions"><span>۲</span>تابع</button>
+    <button class="lesson-tab" id="lessonTab-special" type="button" role="tab" aria-selected="false" aria-controls="lesson-special" tabindex="-1" data-lesson-tab="special"><span>۳</span>توابع خاص</button>
+    <button class="lesson-tab" id="lessonTab-logs" type="button" role="tab" aria-selected="false" aria-controls="lesson-logs" tabindex="-1" data-lesson-tab="logs"><span>۴</span>نمایی و لگاریتم</button>
+    <button class="lesson-tab" id="lessonTab-trig" type="button" role="tab" aria-selected="false" aria-controls="lesson-trig" tabindex="-1" data-lesson-tab="trig"><span>۵</span>مثلثات</button>
+    <button class="lesson-tab" id="lessonTab-matrices" type="button" role="tab" aria-selected="false" aria-controls="lesson-matrices" tabindex="-1" data-lesson-tab="matrices"><span>۶</span>ماتریس</button>
+    <button class="lesson-tab" id="lessonTab-counting" type="button" role="tab" aria-selected="false" aria-controls="lesson-counting" tabindex="-1" data-lesson-tab="counting"><span>۷</span>ترکیبات و شمارش</button>
+  </nav>
 
-  <section class="chapter-block" data-chapter-block="sequences">
+  <section class="chapter-block" id="lesson-sequences" role="tabpanel" aria-labelledby="lessonTab-sequences" data-chapter-block="sequences">
     <div class="chapter-heading"><span class="chapter-number">۱</span><div><h3>الگو و دنباله</h3><p>دنباله حسابی، هندسی و مجموع جمله‌ها</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="sequences" data-keywords="دنباله حسابی جمله عمومی اختلاف قدر نسبت تفاضل">
@@ -297,7 +306,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="functions">
+  <section class="chapter-block" id="lesson-functions" role="tabpanel" aria-labelledby="lessonTab-functions" data-chapter-block="functions" hidden>
     <div class="chapter-heading"><span class="chapter-number">۲</span><div><h3>تابع</h3><p>اعمال جبری، ترکیب تابع و تابع وارون</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="functions" data-keywords="اعمال جبری تابع جمع تفریق ضرب تقسیم دامنه">
@@ -318,7 +327,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="special">
+  <section class="chapter-block" id="lesson-special" role="tabpanel" aria-labelledby="lessonTab-special" data-chapter-block="special" hidden>
     <div class="chapter-heading"><span class="chapter-number">۳</span><div><h3>توابع خاص</h3><p>قدر مطلق، علامت عدد و جزء صحیح</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="special" data-keywords="قدر مطلق تابع قدرمطلق فاصله از صفر">
@@ -333,7 +342,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="logs">
+  <section class="chapter-block" id="lesson-logs" role="tabpanel" aria-labelledby="lessonTab-logs" data-chapter-block="logs" hidden>
     <div class="chapter-heading"><span class="chapter-number">۴</span><div><h3>توابع نمایی و لگاریتمی</h3><p>قوانین توان، تعریف لگاریتم و تغییر مبنا</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="logs" data-keywords="قوانین توان ضرب تقسیم توان صفر منفی">
@@ -357,7 +366,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="trig">
+  <section class="chapter-block" id="lesson-trig" role="tabpanel" aria-labelledby="lessonTab-trig" data-chapter-block="trig" hidden>
     <div class="chapter-heading"><span class="chapter-number">۵</span><div><h3>مثلثات</h3><p>نسبت‌ها، روابط بنیادی و قوانین مثلث</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="trig" data-keywords="درجه رادیان تبدیل زاویه pi">
@@ -384,7 +393,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="matrices">
+  <section class="chapter-block" id="lesson-matrices" role="tabpanel" aria-labelledby="lessonTab-matrices" data-chapter-block="matrices" hidden>
     <div class="chapter-heading"><span class="chapter-number">۶</span><div><h3>ماتریس</h3><p>اعمال روی ماتریس‌ها، دترمینان و وارون ماتریس ۲×۲</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="matrices" data-keywords="جمع ماتریس تفریق ماتریس هم اندازه">
@@ -405,7 +414,7 @@ main{padding:26px 0 32px}
     </div>
   </section>
 
-  <section class="chapter-block" data-chapter-block="counting">
+  <section class="chapter-block" id="lesson-counting" role="tabpanel" aria-labelledby="lessonTab-counting" data-chapter-block="counting" hidden>
     <div class="chapter-heading"><span class="chapter-number">۷</span><div><h3>ترکیبات و شمارش</h3><p>فاکتوریل، اصل شمارش، جایگشت و ترکیب</p></div></div>
     <div class="formula-grid">
       <article class="math-card" data-chapter="counting" data-keywords="فاکتوریل n factorial">
@@ -557,28 +566,43 @@ tabMath.addEventListener('click',()=>activateTab('math'));
 [tabCalculators,tabMath].forEach((tab,index)=>tab.addEventListener('keydown',e=>{
  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();const next=index===0?tabMath:tabCalculators;next.focus();next.click()}
 }));
-const mathSearch=$('mathSearch'),mathCards=[...document.querySelectorAll('.math-card')],chapterBlocks=[...document.querySelectorAll('.chapter-block')],mathFilters=[...document.querySelectorAll('[data-math-filter]')],mathCount=$('mathCount'),mathEmpty=$('mathEmpty');
-let selectedMathChapter='all';
+const mathSearch=$('mathSearch'),mathCards=[...document.querySelectorAll('.math-card')],chapterBlocks=[...document.querySelectorAll('.chapter-block')],lessonTabs=[...document.querySelectorAll('[data-lesson-tab]')],mathCount=$('mathCount'),mathEmpty=$('mathEmpty');
+let selectedMathChapter='sequences';
+function activateLesson(chapter,focusPanel=false){
+ selectedMathChapter=chapter;
+ lessonTabs.forEach(tab=>{
+  const active=tab.dataset.lessonTab===chapter;
+  tab.classList.toggle('active',active);
+  tab.setAttribute('aria-selected',String(active));
+  tab.tabIndex=active?0:-1;
+ });
+ chapterBlocks.forEach(block=>{block.hidden=block.dataset.chapterBlock!==chapter});
+ filterMathCards();
+ if(focusPanel){const panel=$('lesson-'+chapter);if(panel)panel.focus({preventScroll:true});}
+}
 function filterMathCards(){
  const query=(mathSearch.value||'').trim().toLocaleLowerCase('fa');
  let visible=0;
  mathCards.forEach(card=>{
-  const chapterMatch=selectedMathChapter==='all'||card.dataset.chapter===selectedMathChapter;
+  const inLesson=card.dataset.chapter===selectedMathChapter;
   const contentText=(card.innerText+' '+(card.dataset.keywords||'')).toLocaleLowerCase('fa');
   const searchMatch=!query||contentText.includes(query);
-  const show=chapterMatch&&searchMatch;
+  const show=inLesson&&searchMatch;
   card.hidden=!show;if(show)visible++;
  });
- chapterBlocks.forEach(block=>{block.hidden=!block.querySelector('.math-card:not([hidden])')});
- mathCount.textContent=visible+' فرمول';
+ mathCount.textContent=visible+' فرمول از '+mathCards.filter(card=>card.dataset.chapter===selectedMathChapter).length;
  mathEmpty.style.display=visible?'none':'block';
 }
-mathSearch.addEventListener('input',filterMathCards);
-mathFilters.forEach(button=>button.addEventListener('click',()=>{
- selectedMathChapter=button.dataset.mathFilter;
- mathFilters.forEach(b=>b.classList.toggle('active',b===button));
- filterMathCards();
+lessonTabs.forEach((tab,index)=>tab.addEventListener('click',()=>activateLesson(tab.dataset.lessonTab)));
+lessonTabs.forEach((tab,index)=>tab.addEventListener('keydown',event=>{
+ if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+  event.preventDefault();
+  const next=lessonTabs[(index+(event.key==='ArrowLeft'?1:-1)+lessonTabs.length)%lessonTabs.length];
+  next.focus();activateLesson(next.dataset.lessonTab);
+ }
 }));
+mathSearch.addEventListener('input',filterMathCards);
+activateLesson('sequences');
 
 </script>
 </body>
